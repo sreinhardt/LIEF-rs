@@ -27,16 +27,13 @@ fn main() {
         println!("cargo:rustc-link-lib=LIEF");
     }
 
-    let inc_file = format!("{}/{}", inc_path, LIEF_H);
+    let inc_file = format!("{}/LIEF/{}", inc_path, LIEF_H);
     let inc_flag = format!("-I{}", inc_path);
     let out_file = format!("{}/{}", out_path, LIEF_RS);
 
     bindgen::Builder::default()
         .header(inc_file)
-        //.clang_arg(inc_flag)
-        //.clang_arg("-I/mnt/d/Code/github/LIEF/build-nix/include/")
-        //.clang_arg("-I/mnt/d/Code/github/LIEF/include/")
-        .clang_arg("-I/mnt/d/Code/github/LIEF/build-nix/install/usr/include/")
+        .clang_arg(inc_flag)
         .generate()
         .expect("Unable to generate <LIEF.h> bindings")
         .write_to_file(out_file)

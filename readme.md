@@ -34,6 +34,13 @@ Extending [LIEF]() to Rust!
 	if $python_libs; then
 		cmake --build . --target pyLIEF --config ${DRELEASE}
 	fi
+
+
+	mkdir install
+	make DESTDIR=./install install
+
+	INCLUDE_PATH="$(pwd)/install/usr/include"
+	echo "Set LIEF_INC_PATH to ${INCLUDE_PATH}"
 	```
 * Windows
 	```batch
@@ -82,4 +89,5 @@ Extending [LIEF]() to Rust!
 	```bash
 	LIEF_LIB_PATH="../LIEF/build"              # has libLIEF.a
 	LIEF_INC_PATH="../LIEF/api/c/include/LIEF" # has LIEF.h
+
 	```
