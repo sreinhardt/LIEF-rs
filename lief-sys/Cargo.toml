@@ -1,0 +1,18 @@
+[package]
+publish = false
+edition = "2018"
+name    = "lief-sys"
+version = "0.1.0"
+authors = ["Spenser Reinhardt <commiebstrd@protonmail.com>"]
+description = "FFI bindings to LIEF"
+repository = "https://github.com/sreinhardt/lief-rs"
+homepage = "https://github.com/sreinhardt/lief-rs"
+categories = ["External FFI bindings", "Encoding"]
+keywords = ["lief", "PE", "ELF", "MACH-O"]
+license = "MIT"
+
+links = "LIEF"
+[build-dependencies]
+bindgen = "^0.51"
+
+[dependencies]

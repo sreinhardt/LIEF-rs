@@ -1,0 +1,25 @@
+[package]
+publish = false
+edition = "2018"
+name = "lief-rs"
+version = "0.1.0"
+authors = [ "Spenser Reinhardt <commiebstrd@protonmail.com" ]
+description = "Rust bindings for LIEF libraries"
+repository = "https://github.com/sreinhardt/lief-rs"
+homepage = "https://github.com/sreinhardt/lief-rs"
+categories = ["External FFI bindings", "Encoding"]
+keywords = ["lief", "PE", "ELF", "MACH-O"]
+
+[workspace]
+members = [
+	"lief-sys",
+	"lief"
+]
+
+[dependencies.lief-sys]
+path = "./lief-sys"
+version = "^0.1"
+
+[dependencies.lief]
+path = "./lief"
+version = "^0.1"
